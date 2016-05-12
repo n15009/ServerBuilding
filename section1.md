@@ -2,7 +2,7 @@
 ###手順
 ####virtualboxのインストール
 
-1.virtualboxの公式サイトに行く　　
+1.[virtualboxの公式サイト](https://www.virtualbox.org/wiki/Downloads)に行く　　
 
 2.VirtualBox 5.0.20 for Linux hostsを選択　　
 
@@ -12,7 +12,7 @@
 
 5.起動できない
 
-6.ターミナルから
+6.ターミナルからコマンド入力
 
     sudo apt-get install　virtualbox
 
@@ -21,3 +21,13 @@
 8.起動する→成功！！
 
 
+
+####vagrantのインストール
+
+1.[vagrantの公式サイト](https://www.vagrantup.com/404.html)に行く
+
+2.Downloadのページに行きDEBIANの64Bitを選択
+
+3.待つ
+
+4.ダウンロード完了！

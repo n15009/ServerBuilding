@@ -51,7 +51,7 @@
 
 23. IPアドレスの確認がとれたら自分のターミナルから
 
-    $ ssh virtualboxのホスト名@取得したIPアドレス
+	$ ssh virtualboxのホスト名@取得したIPアドレス
 
    を実行しvirtualboxとの接続を確認
 

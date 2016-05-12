@@ -43,11 +43,11 @@
 
 21. 変更が終わったらアップデートコマンドを実行
 
-    $ service network update
+    `$ service network update`
 
 22. そしたらIPアドレスが取得できているはずなので確認
 
-    $ ip a
+    `$ ip a`
 
 23. IPアドレスの確認がとれたら自分のターミナルから
 
@@ -59,29 +59,31 @@
 
 25. /etc/yum.confに行き以下の追記をする
 
-    proxy=http://IPアドレス(proxyのやつ):ポート番号
-    proxy=https://IPアドレス(proxyのやつ):ポート番号
+    `proxy=http://IPアドレス(proxyのやつ):ポート番号`
+
+    `proxy=https://IPアドレス(proxyのやつ):ポート番号`
 
 26. 追加したら
 
-    $ yum update
+    `$ yum update`
 
     を実行しアップデート
 
 27.  そしてすぐさまwgetをゲットするためにコマンド
 
-   '$ yum install wget'
+    `$ yum install wget`
 
     を実行する
 
 28. wgetをインストールできたら/etc/wgetrcファイルに以下を追記
 
-    'http_proxy=http://IPアドレス(proxyのやつ):ポート番号
-    https_proxy=http://IPアドレス(proxyのやつ):ポート番号'
+    `http_proxy=http://IPアドレス(proxyのやつ):ポート番号`
+
+    `https_proxy=http://IPアドレス(proxyのやつ):ポート番号`
 
 29. 追記したらもう一度アップデートを行う
 
-    '$ yum update'
+    `$ yum update`
 
 
 --------------------------------------------------------------------------

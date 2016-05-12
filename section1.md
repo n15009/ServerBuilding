@@ -2,7 +2,7 @@
 ###手順
 ####virtualboxのインストール
 
-1.virtualboxのサイトに行く　　
+1.virtualboxの公式サイトに行く　　
 
 2.VirtualBox 5.0.20 for Linux hostsを選択　　
 
@@ -12,8 +12,12 @@
 
 5.起動できない
 
-6.ターミナルからsudo apt-get install　virtualbox
+6.ターミナルから
+
+    sudo apt-get install　virtualbox
 
 7.ちょっと待つ
 
-8.起動する→成功！！　　
+8.起動する→成功！！
+
+

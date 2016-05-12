@@ -43,7 +43,7 @@
 
 21. 変更が終わったらアップデートコマンドを実行
 
-    ```$ service network update```
+    ```$ service network restart```
 
 22. そしたらIPアドレスが取得できているはずなので確認
 

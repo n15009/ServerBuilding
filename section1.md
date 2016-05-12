@@ -2,16 +2,16 @@
 ###手順
 ####virtualboxのインストール
 
-virtualboxのダウンロード
-
 1.virtualboxのサイトに行く　　
 
 2.VirtualBox 5.0.20 for Linux hostsを選択　　
 
 3.Ubuntu 16.04 ("Xenial")のAMD64を選択　　
 
-4.待つ　　
+4.待つ
 
-5.ターミナルからsudo apt-get install　　 
+5.起動できない
 
-6.起動する　　
+6.ターミナルからsudo apt-get install　virtualbox
+
+7.起動する→成功！！　　

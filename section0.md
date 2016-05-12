@@ -1,6 +1,6 @@
 #section0
-###手順
-####virtualboxのインストール
+##手順
+###virtualboxのインストール
 
 1.[virtualboxの公式サイト](https://www.virtualbox.org/wiki/Downloads)に行く　　
 
@@ -27,7 +27,7 @@
 
 
 
-####vagrantのインストール
+###vagrantのインストール
 
 1.[vagrantの公式サイト](https://www.vagrantup.com/404.html)に行く
 

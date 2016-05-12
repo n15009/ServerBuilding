@@ -59,9 +59,7 @@
 
 25. /etc/yum.confに行き以下の追記をする
 
-    `proxy=http://IPアドレス(proxyのやつ):ポート番号`
-
-    `proxy=https://IPアドレス(proxyのやつ):ポート番号`
+    `proxy=http://IPアドレス(proxyのやつ):ポート番号proxy=https://IPアドレス(proxyのやつ):ポート番号`
 
 26. 追加したら
 
@@ -75,9 +73,7 @@
 
 28. wgetをインストールできたら/etc/wgetrcファイルに以下を追記
 
-    `http_proxy=http://IPアドレス(proxyのやつ):ポート番号`
-
-    `https_proxy=http://IPアドレス(proxyのやつ):ポート番号`
+    `http_proxy=http://IPアドレス(proxyのやつ):ポート番号https_proxy=http://IPアドレス(proxyのやつ):ポート番号`
 
 29. 追記したらもう一度アップデートを行う
 

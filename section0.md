@@ -42,6 +42,7 @@
     sudo apt-get install vagrant
 
 6.バージョン確認
+
     vagrant -v
 
 7.**Vagrant 1.8.1**を確認し任務完了！

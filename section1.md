@@ -70,18 +70,18 @@
 
 27.  そしてすぐさまwgetをゲットするためにコマンド
 
-    $ yum install wget
+   '$ yum install wget'
 
     を実行する
 
 28. wgetをインストールできたら/etc/wgetrcファイルに以下を追記
 
-    http_proxy=http://IPアドレス(proxyのやつ):ポート番号
-    https_proxy=http://IPアドレス(proxyのやつ):ポート番号
+    'http_proxy=http://IPアドレス(proxyのやつ):ポート番号
+    https_proxy=http://IPアドレス(proxyのやつ):ポート番号'
 
 29. 追記したらもう一度アップデートを行う
 
-    $ yum update
+    '$ yum update'
 
 
 --------------------------------------------------------------------------

@@ -53,7 +53,7 @@
 
     $ ssh virtualboxのホスト名@取得したIPアドレス
 
-を実行しvirtualboxとの接続を確認
+   を実行しvirtualboxとの接続を確認
 
 24. 続いてyumとwgetのproxyの設定を行う
 
@@ -66,13 +66,13 @@
 
     $ yum update
 
-を実行しアップデート
+    を実行しアップデート
 
 27.  そしてすぐさまwgetをゲットするためにコマンド
 
     $ yum install wget
 
-を実行する
+    を実行する
 
 28. wgetをインストールできたら/etc/wgetrcファイルに以下を追記
 

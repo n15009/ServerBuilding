@@ -12,6 +12,8 @@
 
 5.起動できない
 
-6.ターミナルからsudo apt-get install　virtualbox
+6.ターミナルから'sudo apt-get install　virtualbox'
 
-7.起動する→成功！！　　
+7.ちょっと待つ
+
+8.起動する→成功！！　　

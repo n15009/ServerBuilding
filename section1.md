@@ -85,6 +85,60 @@
 
     `$ yum update`
 
+30. Apache HTTP serverのインスール（以下のコマンドを実行）
+    
+    `$ yum install httpd`
+
+31. Apache を起動させる（以下のコマンド）
+    
+    '$ service httpd start
+
+32. 起動出来てるか確認
+
+    `$ service httpd status`
+
+    ` Active: active (running)と表示されればOK `
+
+33. mySQLのインストール（以下のコマンドを実行）
+    
+    `$ yum install mysql mysql-server mysql-devel`
+
+34. mySQLを起動させる（以下のコマンド）
+    
+    `$ service mysqld start`
+    
+    ` Starting mysqld (via systemctl)               [ OK ]`
+
+    となれば起動OK
+
+35. mySQLにアクセスする（以下のコマンド）
+
+    `$ mysql -p`
+
+     パスワードを求められるのでパスワードを入力
+
+36. しかしERROR 1045 (28000): Access denied for user 'root'@'localhost' (using p    assword: YES)と表示されアクセス出来ない
+
+37. 原因はmySQLのパスワードが違うらしいがわからないので再設定する
+
+38. まずmySQLを止める
+
+    `$ service mysqld stop`
+    
+    `Stopping mysqld:                               [ OK ]`
+
+    となればmySQLの停止が完了
+
+39. 続いてmysqlをセーフモードで起動させる（以下のコマンド）
+    
+    `$ mysqld_safe --skip-grant-tables`
+
+40. コマンドを実行したら別のターミナルを開きmySQLを実行する
+
+    `$ mysql -p`
+
+41.
+
 
 --------------------------------------------------------------------------
 

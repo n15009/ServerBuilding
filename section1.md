@@ -161,11 +161,60 @@
 
      これでmySQLの設定は完了
 
+    ```mySQL他の方法```
+
+      まずmariadbなる変な奴がいるので消す
+
+    `$ yum list installed | grep maria`
+
+     このコマンドで存在を確認し
+
+    `$ yum -y remove mariadb-libs`
+
+     これで消去
+
+     続いてmySQLのインストール
+
+    `$ yum -y install mysql`
+    `$ yum -y install mysql-devel`
+    `$ yum -y install mysql-server`
+    `$ yum -y install mysql-utilities`
+
+    インストールしたらmySQLの起動
+
+    `$ service mysql start`
+
+    続いてパスワードの設定
+
+    `$ /usr/bin/mysql_secure_installation`
+
+     新しいパスワードを聞かれるので設定し完了
+ 
+
 44. PHPのインストール（以下のコマンド）
 
     `$ yum install php php-mbstring php-mysql`
 
-     
+　　　phpの起動の確認
+
+      /var/www/htmlの下にindex.phpというファイルを作成し以下を記入し保存
+
+    ` <?php phpinfo(); ?>`
+    
+     そして```IPアドレス/index.php```と入力し青っぽいphpの画面が出れば起動してい     る
+
+
+.   wordpressのインストール
+
+    `$ wget https://ja.wordpress.org/latest-ja.tar.gz`
+
+    `$ tar -xzvf latest-ja.tar.gz`
+
+    /var/www/htmlの下にwordpressの中身を展開
+
+    `$ mv wordpress/* ./`
+    
+	     
 -------------------------------------------------------------------------
 
  

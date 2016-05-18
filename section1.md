@@ -137,9 +137,19 @@
 
     `$ mysql -p`
 
-41.
+41. mysqlていう databaseが存在するのでそちらに移動
 
+    `mysql> use mysql;`
 
+    `Database changed`
+
+42. 続いてユーザー情報の変更でパスワードを変更する
+
+    `mysql> UPDATE user SET Password=PASSWORD（’新しいパスワード’）WHERE User=’r     oot’;`
+    
+    これでOK
+
+43.  
 --------------------------------------------------------------------------
 
  

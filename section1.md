@@ -65,7 +65,7 @@
 
 26. 追加したら
 
-    `$ yum update`
+    `$ yum -y update`
     
     を実行しアップデート
 
@@ -177,6 +177,8 @@
 
      続いてmySQLのインストール
 
+     `$ yum -y install http://dev.mysql.com/get/mysql-community-release-el7-5.n      oarch.rpm`
+
     `$ yum -y install mysql`
     `$ yum -y install mysql-devel`
     `$ yum -y install mysql-server`
@@ -216,7 +218,7 @@
 
     `$ mv wordpress/* ./`
     
-	     
+      
 -------------------------------------------------------------------------
 
  

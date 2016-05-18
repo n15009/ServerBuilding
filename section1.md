@@ -149,7 +149,16 @@
     
     これでOK
 
-43.  
---------------------------------------------------------------------------
+43. `$ mysql -u adminusername -p`でmysqlに接続しここはチャンスなのでコマンドを撃    ちまくる
+
+     `mysql> CREATE DATABASE databasename;`
+
+     `mysql> GRANT ALL PRIVILEGES ON databasename.* TO "wordpressusername"@"host      name"IDENTIFIED BY "password";`
+
+     `mysql> FLUSH PRIVILEGES;`
+
+     `mysql> EXIT`
+
+-------------------------------------------------------------------------
 
  

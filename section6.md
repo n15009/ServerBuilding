@@ -104,12 +104,40 @@ amazon AWSのホームでs3を選択しバケットの作成をクリック
 #6-4 cloudFront
 
 ＡＭＩでインスタンスを立ち上げる
+
 CloudFrontに行き「Create Distribution」をクリック
+
 Webの「Get Started」を選択
+
 Origin Domain Nameに立ち上げたインスタンスのパブリックDNSを入力
+
 Create Distributionをクリック
+
 ちょっと待つ
+
 ブラウザでhttp://Domain name(CloudFrontのやつ）を実行
+
 Welcome to AMIMOTO AMIと出るのでインスタンスＩＤを入力
+
 成功！！ラッキー
+
+#6-5 ELB
+
+AMIを使ってインスタンスを２つ作成
+
+ロードバランサーをクリック
+
+ロードバランサーの作成
+
+ロードバランサー名に学籍番号を入力→　次の手順へ
+
+セキュリティグループの割り当てで既存のセキュリティグループを選択するをチェックし自分のセキュリティグループをチェック
+
+ec2に接続し/var/log/nginx/access.logでヘルスチェックを確認
+
+ロードバランサーの説明タブのＤＮＳ名をブラウザで入力
+
+ワードプレスが表示されたら完了
+
+
 

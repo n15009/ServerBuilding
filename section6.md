@@ -48,7 +48,7 @@ grusniに作ったキーとAnsibleセットを持って行く。
 ブラウザでパブリックipを打つとwordpressが出来てた！！ラッキー
 
 
-6-2 AMI
+###AMI
 
 環境の構築が終わったら、ＡＭＩの作成。インスタンスの自分のインスタンスチェックし「アクション」ー「イメージ」ー「イメージの作成」
 するとＡＭＩに自分のやつが出来ているのでそれをチェックし「作成」
@@ -64,4 +64,7 @@ amazon AWSのホームでs3を選択しバケットの作成をクリック
     upload: myfolder/file1.txt to s3://mybucket/myfolder/file1.txt
     upload: myfolder/subfolder/file1.txt to s3://mybucket/myfolder/subfolder/file1.txt
 
+    $ aws s3 cp --acl public-read myfolder s3://mybucket/myfolder
+    
 
+これで見れる

@@ -155,7 +155,7 @@
 
 ブラウザで
 
-     192.168.56.128/wp-admin/install.php
+     vagrantのIPアドレス/wp-admin/install.php
 
 につないでwordpressへ！！
 

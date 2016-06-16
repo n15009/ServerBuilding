@@ -119,27 +119,28 @@
     $ systemctl restart mariadb
 
 #Wordpressのインストール
-wordpressインストールコマンド
+####wordpressインストールコマンド
 
     $ wget http://wordpress.org/latest.tar.gz
 
-解凍いたす↓
+#####解凍いたす↓
 
     $ tar -xvf latest.tar.gz
 
-wordpressディレクトリをhtdocsへ移動
+####wordpressディレクトリをhtdocsへ移動
 
     $ mv wordpress/ /usr/local/apache2/htdocs
 
-そして中身をぶちまける
+##そして中身をぶちまけるようぜ！！
     
     htdocs$ mv wordpress/* ./
 
+これ設定しれ
 
     $ vi /usr/local/apache2/conf/httpd.conf
     
     <IfModule dir_module>
-        DirectoryIndex index.html index.php
+        DirectoryIndex index.html ←ここに「index.php」を追加
     </IfModule>
 
     そして行の最後尾にこいつを追加だぜ！

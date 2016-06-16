@@ -144,7 +144,7 @@
     </IfModule>
 
     そして行の最後尾にこいつを追加だぜ！
-
+      ↓            ↓           ↓
     <FilesMatch "\.ph(p[2-6]?|tml)$">
         SetHandler application/x-httpd-php
     </FilesMatch>
@@ -154,6 +154,8 @@
      192.168.56.128/wp-admin/install.php
 
 につないでwordpressへ！！
+
+⚠多分localhostのところに127.0.0.1と入力
 
 #ベンチマークを取るぜ
 

@@ -58,7 +58,7 @@
 
     $ tar -xvf mirror 
 
-#####続いてコンパイルいたす
+#####続いてphpディレクトリの中に行きコンパイルいたす
 
     $ ./configure --with-apxs2=/usr/local/apache2/bin/apxs --with-mysqli  
 

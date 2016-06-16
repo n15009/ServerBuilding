@@ -1,29 +1,34 @@
  
 # 2-3 Wordpressを動かす
-### Apache HTTP Server 2.2のインストール
+### Apache HTTP Server 2.2のインストール↓↓
 
     $ wget http://ftp.yz.yamagata-u.ac.jp/pub/network/apache//httpd/httpd-2.2.31.tar.gz
 
-コンパイルしようぜ！
+###あたたまる前に解凍しちゃうぜ
 
-    $ .configure
+    $ tar -xvf httpd_2.2.31.tar.gz
 
-ビルドしようぜ！
+###コンパイルしようぜ!
+#####(⚠httpdディレクトリの中でですよ！)
+
+    $ ./configure
+
+###ビルドしようぜ！
 
     $ make
 
-インストールしようぜ
+###インストールしようぜ
 
     $ make install
 
-インストール終わってウハウハなって浮かれてるそこの君！
+###インストール終わってウハウハなって浮かれてるそこの君！
 
-このまま起動しても出来ません
+####このまま起動しても出来ません
 
-    $ /usr/local/apache/bin/apachectl start
+    $ /usr/local/apache2/bin/apachectl start
     httpd: Could not reliably determine the server's fully qualified domain name, using localhost.localdomain for ServerName
 
-とエラーなっちゃうのでちょっといじるぜ
+####↑とエラーなっちゃうのでちょっといじるぜ
 
     $ vi /usr/local/apache2/conf/httpd.conf
 

@@ -149,13 +149,17 @@
         SetHandler application/x-httpd-php
     </FilesMatch>
 
-そして
+そして再びリスタートかける
+
+    $ /usr/local/apache2/bin/apachectl restart
+
+ブラウザで
 
      192.168.56.128/wp-admin/install.php
 
 につないでwordpressへ！！
 
-⚠多分localhostのところに127.0.0.1と入力
+⚠多分localhostのところに127.0.0.1と入力した方がいいときもある
 
 #ベンチマークを取るぜ
 

@@ -32,26 +32,26 @@
 
     $ vi /usr/local/apache2/conf/httpd.conf
 
-へ行き
+####へ行き
 
     #ServerName www.example.com:80
     ServerName localhost:80  ←この行を追加だぜ
 
-ここで再起動だぜ
+###ここで再起動だぜ!!
 
     $ /usr/local/apache2/bin/apachectl restart
 
-何も言われなかったらOKだぜ
+####何も言われなかったらOKだぜ
 
-↓これでstartしてるか確認できるぜ↓
+#####↓これでstartしてるか確認できるぜ↓
 
     $ ps aux | grep httpd
 
-そして自分のIPアドレスをブラウザに入力し
+###そして自分のIPアドレスをブラウザに入力し
 
     It works!
 
-と表示されればOK！
+###と表示されればOK！
 
 #phpのインストール
 
@@ -76,6 +76,7 @@
     $ yum install -y libxml2 libxml2-devel
 
 #####この子を取得しもういちどコンパイルし完了
+######⚠(エラーが出てない場合はやらなくてOK)
 
 ####そしてビルドしようぜ！
 
@@ -103,6 +104,8 @@
 ####確認終わったらdatabaseの作成
 
     $ mysql -p
+
+#####パスワードを聞かれますがシカトしてEnter押しちゃえ！
 
 ####作ちゃうぜ
 

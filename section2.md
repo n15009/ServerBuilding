@@ -114,22 +114,30 @@
     MariaDB [(none)]> flush privileges;
     MariaDB [(none)]> exit
 
-リスタートしちゃうぜ
+###リスタートしちゃうぜ
 
     $ systemctl restart mariadb
 
 #Wordpressのインストール
+wordpressインストールコマンド
 
     $ wget http://wordpress.org/latest.tar.gz
 
+解凍いたす↓
+
     $ tar -xvf latest.tar.gz
 
-    $ mv wordpress/* /usr/local/apache2/htdocs
+wordpressディレクトリをhtdocsへ移動
+
+    $ mv wordpress/ /usr/local/apache2/htdocs
+
+そして中身をぶちまける
+    
+    htdocs$ mv wordpress/* ./
+
 
     $ vi /usr/local/apache2/conf/httpd.conf
     
-
-
     <IfModule dir_module>
         DirectoryIndex index.html index.php
     </IfModule>

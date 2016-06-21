@@ -316,6 +316,55 @@ default.confの設定を変える
 
 #ベンチマークを取るぜ
 
-    $ sudo apt install apache2-utils
+    $ sudo apt install apache2-utils   
 
-    $ ab -n 100 -c 100 http://192.168.56.128/wp-admin/
+###Pluginに「WP Super Cache」を入れました
+
+    $ cd /usr/local/apache2/htdocs/wp-content/plugins/
+
+の中に
+
+    $ wget https://downloads.wordpress.org/plugin/wp-super-cache.1.4.8.zipcd
+
+####実行いたしました
+
+    $ ab -n 100 -c 10 http://192.168.56.128/wordpress/
+
+結果
+
+    Server Software:        Apache/2.2.31
+    Server Hostname:        192.168.56.128
+    Server Port:            80
+
+    Document Path:          /wordpress
+    Document Length:        240 bytes
+
+    Concurrency Level:      10
+    Time taken for tests:   0.017 seconds
+    Complete requests:      10
+    Failed requests:        0
+    Non-2xx responses:      10
+    Total transferred:      4800 bytes
+    HTML transferred:       2400 bytes
+    Requests per second:    574.58 [#/sec] (mean)
+    Time per request:       17.404 [ms] (mean)
+    Time per request:       1.740 [ms] (mean, across all concurrent requests)
+    Transfer rate:          269.33 [Kbytes/sec] received
+
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:        1    2   0.5      2       2
+    Processing:     5    9   3.6      9      14
+    Waiting:        4    9   3.4      9      14
+    Total:          5   11   4.1     10      17
+
+    Percentage of the requests served within a certain time (ms)
+      50%     10
+      66%     12
+      75%     15
+      80%     16
+      90%     17
+      95%     17
+      98%     17
+      99%     17
+     100%     17 (longest request)

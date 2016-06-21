@@ -82,15 +82,15 @@ Vagrantfileの設定変更の反映
 
 更に、/etc/nginx/conf.d/default.confの中を
 
-root   /var/www/;
-  index  index.php;
+    root   /var/www/;
+    index  index.php;
 
- location ~ \.php$ {   
-        root           /var/www/;  
-        fastcgi_pass   127.0.0.1:9000;  
-        fastcgi_index  index.php;  
-        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;  
-        include        fastcgi_params;  
+     location ~ \.php$ {   
+            root           /var/www/;  
+            fastcgi_pass   127.0.0.1:9000;  
+            fastcgi_index  index.php;  
+            fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;  
+            include        fastcgi_params;  
      }
 
 ↑上記に書き換える

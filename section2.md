@@ -217,12 +217,12 @@ default.confの設定を変える
 
     error: xml2-config not found. Please check your libxml2 installation.
 
-#####というNEWエラーがでてきたので
+#####⚠和訳（この処理を間違えるとpcが爆発します）というNEWエラーがでてきたので
 
     $ yum install -y libxml2 libxml2-devel
 
 #####この子を取得しもういちどコンパイルし完了
-######⚠(エラーの種類によります！エラーが出てない場合はやらなくてOK)
+######⚠(エラーの種類によります！エラーが出てない場合はやらなくてOK！)
 
 ####そしてビルドしようぜ！
 

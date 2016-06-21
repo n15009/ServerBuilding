@@ -332,40 +332,41 @@ default.confの設定を変える
 
 結果
 
-   Server Software:        Apache/2.2.31
-   Server Hostname:        192.168.56.128
-   Server Port:            80
+    Server Software:        Apache/2.2.31
+    Server Hostname:        192.168.56.128
+    Server Port:            80
 
-   Document Path:          /wordpress
-   Document Length:        240 bytes
+    Document Path:          /wordpress
+    Document Length:        240 bytes
 
-   Concurrency Level:      10
-   Time taken for tests:   0.113 seconds
-   Complete requests:      100
-   Failed requests:        0
-   Non-2xx responses:      100
-   Total transferred:      48000 bytes
-   HTML transferred:       24000 bytes
-   Requests per second:    883.63 [#/sec] (mean)
-   Time per request:       11.317 [ms] (mean)
-   Time per request:       1.132 [ms] (mean, across all concurrent requests)
-   Transfer rate:          414.20 [Kbytes/sec] received
+    Concurrency Level:      10
+    Time taken for tests:   0.113 seconds
+    Complete requests:      100
+    Failed requests:        0
+    Non-2xx responses:      100
+    Total transferred:      48000 bytes
+    HTML transferred:       24000 bytes
+    Requests per second:    883.63 [#/sec] (mean)
+    Time per request:       11.317 [ms] (mean)
+    Time per request:       1.132 [ms] (mean, across all concurrent requests)
+    Transfer rate:          414.20 [Kbytes/sec] received
 
-   Connection Times (ms)
-                 min  mean[+/-sd] median   max
-   Connect:        0    0   0.5      0       2
-   Processing:     4   11  11.4      8      99
-   Waiting:        4    9   2.5      8      16
-   Total:          5   11  11.5      8     100
+    Connection Times (ms)
+                  min  mean[+/-sd] median   max
+    Connect:        0    0   0.5      0       2
+    Processing:     4   11  11.4      8      99
+    Waiting:        4    9   2.5      8      16
+    Total:          5   11  11.5      8     100
 
-   Percentage of the requests served within a certain time (ms)
-     50%      8
-     66%      9
-     75%     10
-     80%     12
-     90%     15
-     95%     16
-     98%     76
-     99%    100
-    100%    100 (longest request)
+    Percentage of the requests served within a certain time (ms)
+      50%      8
+      66%      9
+      75%     10
+      80%     12
+      90%     15
+      95%     16
+      98%     76
+      99%    100
+     100%    100 (longest request)
 
+   

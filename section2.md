@@ -288,6 +288,13 @@ default.confの設定を変える
 
     $ /usr/local/apache2/bin/apachectl restart
 
+###php.iniの作成だぜ
+このままだとphpが動かないので
+ 
+    $ find / -name "php.ini-development" -ls
+    $ cp php.ini-development /usr/local/lib/php.ini
+    $ /usr/local/apache2/bin/apachectl restart
+
 ブラウザで
 
      vagrantのIPアドレス/wp-admin/install.php

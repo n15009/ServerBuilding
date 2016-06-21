@@ -53,6 +53,87 @@ Vagrantfileの設定変更の反映
 
     $ vagrant ssh
 
+#2-2Wordpressを動かす
+
+###nginxのインストール
+
+    $ sudo yum -y install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm  
+    $ yum install --enablerepo=epel nginx 
+
+###phpのインストール
+
+    $ yum -y install php php-fpm php-mysql
+
+/etc/php-fpm.d/www.confの中でapacheをnginxに書き換える
+
+    user = apache → user = nginx
+    group = apache → group = nginx
+
+更に、/etc/nginx/conf.d/default.confの中を
+
+root   /var/www/;
+  index  index.php;
+
+ location ~ \.php$ {   
+        root           /var/www/;  
+        fastcgi_pass   127.0.0.1:9000;  
+        fastcgi_index  index.php;  
+        fastcgi_param  SCRIPT_FILENAME  /var/www$fastcgi_script_name;  
+        include        fastcgi_params;  
+     }
+
+↑上記に書き換える
+
+nginxとphp-fpmの自動起動設定
+
+    $ systemctl enable php-fpm.service
+    $ systemctl enable nginx.service
+
+###MariaDBのインストール
+
+    $ yum -y install mariadb mariadb-server
+
+###MariaDBの起動
+
+    $ systemctl start mariadb 
+
+    $ systemctl enable mariadb
+
+###betabaseを作成
+
+    MariaDB [(none)]> create database database名;
+    MariaDB [(none)]> grant all privileges on database名.* to "username"@"localhost"identified by "password";
+    MariaDB [(none)]> flush privileges;
+    MariaDB [(none)]> exit
+#Wordpressダウンロード
+
+    $ wget http://wordpress.org/latest.tar.gz    
+
+解凍
+
+    $ tar -xvf latest-ja.tar.gz
+
+所有者とグループを変える
+
+    $ chown -R nginx:nginx wordpress  
+
+default.confの設定を変える
+
+    $ vi /etc/nginx/conf.d/default.conf  
+    
+    rootをwordpressがあるとこに変更する
+
+    fastcgi_param SCRIPT_FILENAME  ←に$document_root$fastcgi_script_name;  を追加
+
+終わったらnginxの再起動を忘れずに
+
+    $ systemctl restart nginx  
+
+    192.168.56.129/wp-admin/install.php 
+
+    でWordpressを開く
+
+
 # 2-3 Wordpressを動かす
 ### Apache HTTP Server 2.2のインストール↓↓
 

@@ -1,15 +1,26 @@
 #section02
 #2-1Vagrantを利用したCentOS7環境の起動
+
 USBストレージからVagrant用CentOS boxを使用
+
     $vagrant box add CentOS7 コピーしたboxファイル --force
+
 Vagrantの初期設定
+
 作業用でディレクトリを作成し、その中で初期設定を行う。
+
     $vagrant init
+
 「vagrantfile」というvagantのファイルをが出来た。このファイルの中に設定が書かれているのでCentOS7を起動させるために設定を変えます
+
     config.vm.box = "base"
+
 の"base"の部分を
+
     config.vm.box = "CentOS7"
+
 と書き換えます。
+
 ##仮想マシンの起動
 
     vagrant up

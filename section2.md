@@ -314,11 +314,22 @@ default.confの設定を変える
 
 ⚠多分localhostのところに127.0.0.1と入力した方がいいときもある
 
-#ベンチマークを取るぜ
+#2-4ベンチマークを取るぜ
+###abコマンドのインストール
 
     $ sudo apt install apache2-utils   
 
-###Pluginに「WP Super Cache」を入れました
+###PageSpeed
+google chromeにPageSpeedをインストール
+
+    ブラウザの設定画面→その他のツール→拡張機能→PageSpeed Insights (with PNaCl)
+
+その後Wordpressの画面で
+
+    ブラウザの設定画面→その他のツール→デベロッパツール→>>→PageSpeed→ANALYZE
+
+
+####Pluginに「WP Super Cache」を入れました
 
     $ cd /usr/local/apache2/htdocs/wp-content/plugins/
 

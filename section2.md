@@ -30,7 +30,28 @@ Vagrantの初期設定
 
     vagrant ssh
 
+#ホストオンリーアダプタの設定
+サーバーを設定したあと、動作確認し接続するためのIPアドレスを設定します。また、そのためのNICを追加します。
+Vagrantfileの
+    
+    vagtant.congfigure(2) do | config|
 
+から一番最後の
+
+    end
+
+の間に
+
+    config.vm.network "private_network", ip:"192.168.56.129"
+
+と書き仮想マシンのIPアドレスを設定
+Vagrantfileの設定変更の反映
+
+    $ vagrant reload
+
+|仮想マシンの起動
+
+    $ vagrant ssh
 
 # 2-3 Wordpressを動かす
 ### Apache HTTP Server 2.2のインストール↓↓
@@ -109,7 +130,7 @@ Vagrantの初期設定
     $ yum install -y libxml2 libxml2-devel
 
 #####この子を取得しもういちどコンパイルし完了
-######⚠(エラーが出てない場合はやらなくてOK)
+######⚠(エラーの種類によります！エラーが出てない場合はやらなくてOK)
 
 ####そしてビルドしようぜ！
 

@@ -1,157 +1,168 @@
 #section1
 ##手順
 ###CentOSのインストール
-1. 先生からUSBを借りる
+######文章で書くと分かりづらいので流れで説明します。
 
-2. copyする
+#####1.-------->先生からUSBを借りcopyする
 
-3. 5秒待つ
+#####2.-------->**CentOS-7-x86_64-Minimal-1511.iso**があるのを確認
 
-4. **CentOS-7-x86_64-Minimal-1511.iso**があるのを確認
+#####3.-------->virtualboxを起動し新規をクリック
 
-5. virtualboxを起動し新規をクリック
+#####4.-------->仮想マシンの作成画面でエキスパートモードを選択
 
-6. 仮想マシンの作成画面でエキスパートモードを選択
+#####5.-------->名前の枠に**centos**と入力
 
-7. 名前の枠に**centos**と入力
+#####6.-------->自動でタイプが**Linux**、バージョンが***Red Hat(64bit)***となっているのを確認
 
-8. 自動でタイプが**Linux**、バージョンが***Red Hat(64bit)***となっているのを確認
+#####7.-------->メモリーサイズを**1024MB**に設定する
 
-9. メモリーサイズを**1024MB**に設定する
+#####8.-------->ハードディスクで**仮想ハードディスクを作成する**にチェックし作成をクリック
 
-10. ハードディスクで**仮想ハードディスクを作成する**にチェックし作成をクリック
+#####9.-------->次の画面でファイルサイズを**8GB**に設定し作成をクリック
 
-11. 次の画面でファイルサイズを**8GB**に設定し作成をクリック
+#####10.-------->メイン画面で作成した**centos**を選択し起動をクリック
 
-12. メイン画面で作成した**centos**を選択し起動をクリック
+#####11.-------->起動ハードディスクを選択画面で**CentOS-7-x86_64-Minimal-1511.iso**を選択を選択し起動をクリック
 
-13. 起動ハードディスクを選択画面で**CentOS-7-x86_64-Minimal-1511.iso**を選択を選択し起動をクリック
+###11.5.....待つ!!（結構待つ）
 
-14. 待つ（結構待つ）
+#####12.-------->言語選択の画面で**日本語**を選択し続行をクリック(言語は人による)
 
-15. 言語選択の画面で**日本語**を選択し続行をクリック(言語は人による)
+#####13.-------->次の画面でちょっと待ってインストールの開始を選択
 
-16. 次の画面でちょっと待ってインストールの開始を選択
+#####14.-------->インストール中にROOTパスワードとユーザの作成を設定する（ユーザの作成時**このユーザを管理者にする**にチェック)
 
-17. インストール中にROOTパスワードとユーザの作成を設定する（ユーザの作成時**このユーザを管理者にする**にチェック)
+#####15.-------->完了したら再起動
 
-18. 完了したら再起動
+#####16.-------->ネットワークの設定でアダプター2にホストオンリーアダプターを設定する
 
-19. ネットワークの設定でアダプター2にホストオンリーアダプターを設定する
+####17.-------->ネットワークの設定
 
-20. **/etc/sysconfig/network-script**に行きifcfg-enp0s3とifcfg-enp0s8というファイルのBOOTPROTOをBOOTPROTO=dhcpに、さらにONBOOTをONBOOT=yesに変更する（この時rootユーザーじゃないと変更の許可がなく保存できないのでrootに変身する）
+    /etc/sysconfig/network-scriptに行き
 
-21. 変更が終わったらアップデートコマンドを実行
+    ifcfg-enp0s3とifcfg-enp0s8というファイルのBOOTPROTO
 
-    ```$ service network restart```
+    をBOOTPROTO=dhcpに、
 
-22. そしたらIPアドレスが取得できているはずなので確認
+    さらにONBOOTをONBOOT=yesに変更する
 
-    `$ ip a`
+    ⚠（この時rootユーザーじゃないと変更の許可がなく保存できないのでrootに変身する）
 
-23. IPアドレスの確認がとれたら自分のターミナルから    
+#####18.-------->変更が終わったらアップデートコマンドを実行
+
+    $ service network restart
+
+#####19.-------->そしたらIPアドレスが取得できているはずなので確認
+
+    $ ip a
+
+#####20.-------->IPアドレスの確認がとれたら自分のターミナルから    
  
-    `$ ssh virtualboxのホスト名@取得したIPアドレス`
+    $ ssh virtualboxのホスト名@取得したIPアドレス
 
-    を実行しvirtualboxとの接続を確認
+を実行しvirtualboxとの接続を確認
 
-24. 続いてyumとwgetのproxyの設定を行う
+#####20.-------->続いてyumとwgetのproxyの設定を行う
 
-25. /etc/yum.confに行き以下の追記をする
+**/etc/yum.conf**に行き以下の追記をする
 
-    `proxy=http://IPアドレス(proxyのやつ):ポート番号`
+    proxy=http://IPアドレス(proxyのやつ):ポート番号
     
-    `proxy=https://IPアドレス(proxyのやつ):ポート番号`
+    proxy=https://IPアドレス(proxyのやつ):ポート番号
 
-26. 追加したら
+#####21.-------->追加したら
 
-    `$ yum -y update`
+    $ yum -y update
     
-    を実行しアップデート
+を実行しアップデート
 
-    と思っていたがその必要なし
+#####22.-------->そしてすぐさまwgetをゲットするためにコマンド
 
-27.  そしてすぐさまwgetをゲットするためにコマンド
-
-    `$ yum install wget`
+    $ yum install wget
     
-     を実行する
+を実行する
 
-28. wgetをインストールできたら/etc/wgetrcファイルに以下を追記
+#####23.-------->wgetをインストールできたら/etc/wgetrcファイルに以下を追記
 
-    `http_proxy=http://IPアドレス(proxyのやつ):ポート番号`
+    http_proxy=http://IPアドレス(proxyのやつ):ポート番号
     
-    `https_proxy=http://IPアドレス(proxyのやつ):ポート番号`
+    https_proxy=http://IPアドレス(proxyのやつ):ポート番号
 
-29. 追記したらもう一度アップデートを行う
+これで一通りの設定はOK！！
 
-    `$ yum update`
-
-30. Apache HTTP serverのインスール（以下のコマンドを実行）
+##Apache HTTP serverのインスール（以下のコマンドを実行）
     
-    `$ yum install httpd`
+    $ yum install httpd
 
-31. Apache を起動させる（以下のコマンド）
+####Apache を起動させる（以下のコマンド）
     
-    '$ service httpd start
+    $ service httpd start
 
-32. 起動出来てるか確認
+起動出来てるか確認
 
-    `$ service httpd status`
+    $ service httpd status
 
-    ` Active: active (running)と表示されればOK `
+    Active: active (running)と表示されればOK
 
-33. mySQLのインストール（以下のコマンドを実行）
+##mySQLのインストール（以下のコマンドを実行）
     
-    `$ yum install mysql mysql-server mysql-devel`
+    $ yum install mysql mysql-server mysql-devel
 
-34. mySQLを起動させる（以下のコマンド）
+mySQLを起動させる（以下のコマンド）
     
-    `$ service mysqld start`
+    $ service mysqld start
     
-    ` Starting mysqld (via systemctl)               [ OK ]`
+    Starting mysqld (via systemctl)               [ OK ]
 
-    となれば起動OK
+となれば起動OK
 
-35. mySQLにアクセスする（以下のコマンド）
+mySQLにアクセスする（以下のコマンド）
 
-    `$ mysql -p`
+    $ mysql -p
 
-     パスワードを求められるのでパスワードを入力
+パスワードを求められるのでパスワードを入力
 
-36. しかしERROR 1045 (28000): Access denied for user 'root'@'localhost' (using p    assword: YES)と表示されアクセス出来ない
+しかし
+  
+    ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
 
-37. 原因はmySQLのパスワードが違うらしいがわからないので再設定する
+と表示されアクセス出来ない
 
-38. まずmySQLを止める
+原因はmySQLのパスワードが違うらしいがわからないので再設定する
 
-    `$ service mysqld stop`
+まずmySQLを止める
+
+    $ service mysqld stop
     
-    `Stopping mysqld:                               [ OK ]`
+    Stopping mysqld:                               [ OK ]
 
-    となればmySQLの停止が完了
+となればmySQLの停止が完了
 
-39. 続いてmysqlをセーフモードで起動させる（以下のコマンド）
+続いてmysqlをセーフモードで起動させる（以下のコマンド）
     
-    `$ mysqld_safe --skip-grant-tables`
+    $ mysqld_safe --skip-grant-tables
 
-40. コマンドを実行したら別のターミナルを開きmySQLを実行する
+コマンドを実行したら別のターミナルを開きmySQLを実行する
 
-    `$ mysql -p`
+    $ mysql -p
 
-41. mysqlていう databaseが存在するのでそちらに移動
+mysqlていう databaseが存在するのでそちらに移動
 
-    `mysql> use mysql;`
+    mysql> use mysql;
 
-    `Database changed`
+    Database changed
 
-42. 続いてユーザー情報の変更でパスワードを変更する
+続いてユーザー情報の変更でパスワードを変更する
 
-    `mysql> UPDATE user SET Password=PASSWORD（’新しいパスワード’）WHERE User=’r     oot’;`
+    mysql> UPDATE user SET Password=PASSWORD（’新しいパスワード’）WHERE User=’root’;
     
-    これでOK
+これでOK
 
-43. `$ mysql -u adminusername -p`でmysqlに接続しここはチャンスなのでコマンドを撃    ちまくる
+    $ mysql -u adminusername -p
+
+
+でmysqlに接続しここはチャンスなのでコマンドを撃    ちまくる
 
      `mysql> CREATE DATABASE databasename;`
 
@@ -161,47 +172,47 @@
 
      `mysql> EXIT`
 
-     これでmySQLの設定は完了
+これでmySQLの設定は完了
 
    
-     ```mySQL他の方法```
+###mySQL他の方法
 
 
-      まずmariadbなる変な奴がいるので消す
+まずmariadbなる変な奴がいるので消す
 
-    `$ yum list installed | grep maria`
+    $ yum list installed | grep maria`
 
-     このコマンドで存在を確認し
+このコマンドで存在を確認し
 
-    `$ yum -y remove mariadb-libs`
+    $ yum -y remove mariadb-libs
 
-     これで消去
+これで消去
 
-     続いてmySQLのインストール
+続いてmySQLのインストール
 
-     `$ yum -y install http://dev.mysql.com/get/mysql-community-release-el7-5.n      oarch.rpm`
+    $ yum -y install http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 
-    `$ yum -y install mysql`
-    `$ yum -y install mysql-devel`
-    `$ yum -y install mysql-server`
-    `$ yum -y install mysql-utilities`
+    $ yum -y install mysql
+    $ yum -y install mysql-devel
+    $ yum -y install mysql-server
+    $ yum -y install mysql-utilities
 
-    インストールしたらmySQLの起動
+インストールしたらmySQLの起動
 
-    `$ service mysql start`
+    $ service mysql start
 
-    続いてパスワードの設定
+続いてパスワードの設定
 
-    `$ /usr/bin/mysql_secure_installation`
+    $ /usr/bin/mysql_secure_installation
 
-     新しいパスワードを聞かれるので設定し完了
+新しいパスワードを聞かれるので設定し完了
  
 
-44. PHPのインストール（以下のコマンド）
+##PHPのインストール（以下のコマンド）
 
     `$ yum install php php-mbstring php-mysql`
 
-　　　phpの起動の確認
+####phpの起動の確認
 
       /var/www/htmlの下にindex.phpというファイルを作成し以下を記入し保存
 
@@ -210,7 +221,7 @@
      そして```IPアドレス/index.php```と入力し青っぽいphpの画面が出れば起動してい     る
 
 
-.   wordpressのインストール
+##wordpressのインストール
 
     `$ wget https://ja.wordpress.org/latest-ja.tar.gz`
 
@@ -220,12 +231,14 @@
 
     `$ mv wordpress/* ./`
     
-    動かなかったら
-    `$ service httpd restart`
+動かなかったら
 
-    `$ service mysqld restart`
+    $ service httpd restart
 
-    を試して見るべし  
+    $ service mysqld restart
+
+を試して見るべし  
+
 -------------------------------------------------------------------------
 
  

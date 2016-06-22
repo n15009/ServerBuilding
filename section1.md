@@ -105,8 +105,10 @@
 
     Active: active (running)と表示されればOK
 
-##mySQLのインストール（以下のコマンドを実行）
-    
+##mySQLのインストール
+######（ここは苦戦してしまったのでエラーとかも含めて書いています）
+mSQLのインストール
+
     $ yum install mysql mysql-server mysql-devel
 
 mySQLを起動させる（以下のコマンド）
